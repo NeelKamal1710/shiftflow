@@ -1,4 +1,4 @@
-# ShiftFlow V2 — Setup Guide
+# ShiftFlow V2 — (Setup Guide)
 
 ## What is ShiftFlow?
 A shift scheduling app for small businesses (grocery stores, retail, etc.).
