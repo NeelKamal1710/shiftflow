@@ -92,8 +92,8 @@ export default function App() {
   }
 
   // --- Shift type actions ---
-  const handleAddShiftType = async (name, startTime, endTime) => {
-    const { data, error } = await supabase.from('shift_types').insert({ name, start_time: startTime, end_time: endTime }).select().single()
+  const handleAddShiftType = async (name, startTime, endTime, maxPerSlot = 3) => {
+    const { data, error } = await supabase.from('shift_types').insert({ name, start_time: startTime, end_time: endTime, max_per_slot: maxPerSlot }).select().single()
     if (error) { showToast('Error adding shift type'); return }
     setShiftTypes(prev => [...prev, data])
     showToast(`${name} shift added`)
