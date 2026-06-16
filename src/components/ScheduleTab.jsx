@@ -74,7 +74,7 @@ function autoGenerate(employees, shiftTypes, availability, weekStart) {
       // Sort by least assigned first (fairness)
       avail.sort((a, b) => shiftCount[a.id] - shiftCount[b.id])
       // Assign up to 3 per slot
-      avail.slice(0, 3).forEach(emp => {
+      avail.slice(0, shift.max_per_slot || 3).forEach(emp => {
         const a = availability[emp.id]?.[day]?.[shift.id]
         generated.push({
           employee_id: emp.id,
